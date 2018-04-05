@@ -107,9 +107,11 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   private CaptureActivityHandler handler;
   private Result savedResultToShow;
   private ViewfinderView viewfinderView;
-  private TextView statusView;
+  /*private TextView statusView;*/
   private Button flipButton;
   private Button torchButton;
+  private Button captureFormula;
+  private Button captureText;
   private View resultView;
   private Result lastResult;
   private boolean hasSurface;
@@ -190,9 +192,28 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     viewfinderView.setCameraManager(cameraManager);
 
     resultView = findViewById(R.id.result_view);
-    statusView = (TextView) findViewById(R.id.status_view);
+   /* statusView = (TextView) findViewById(R.id.status_view);*/
+    captureFormula = (Button) findViewById(R.id.formula_tab);
+    captureText = (Button) findViewById(R.id.text_tab);
     flipButton = (Button) findViewById(R.id.flip_button);
     torchButton = (Button) findViewById(R.id.torch_button);
+
+    captureFormula.setOnClickListener(new Button.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        setResult(2);
+        finish();
+      }
+    });
+
+    captureText.setOnClickListener(new Button.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        setResult(2);
+        finish();
+      }
+    });
+
 
     handler = null;
     lastResult = null;
@@ -214,7 +235,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
-    resetStatusView();
+    /*resetStatusView();*/
 
     beepManager.updatePrefs();
     ambientLightManager.start(cameraManager);
@@ -266,9 +287,9 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         }
 
         String customPromptMessage = intent.getStringExtra(Intents.Scan.PROMPT_MESSAGE);
-        if (customPromptMessage != null) {
+        /*if (customPromptMessage != null) {
           statusView.setText(customPromptMessage);
-        }
+        }*/
 
       } else if (dataString != null &&
                  dataString.contains("http://www.google") &&
@@ -328,6 +349,13 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
           return ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT;
       }
     }
+  }
+
+  public void ClickCaptureFormula() {
+    //captureFormula.performClick();
+    final AlertDialog alertDialoga = new AlertDialog.Builder(CaptureActivity.this).create();
+    alertDialoga.setTitle("Alert");
+    alertDialoga.setMessage("Disaridan cagirildi");
   }
   
   private static boolean isZXingURL(String dataString) {
@@ -591,7 +619,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       return;
     }
 
-    statusView.setVisibility(View.GONE);
+    /*statusView.setVisibility(View.GONE);*/
     viewfinderView.setVisibility(View.GONE);
     resultView.setVisibility(View.VISIBLE);
 
@@ -692,7 +720,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       if (rawResultString.length() > 32) {
         rawResultString = rawResultString.substring(0, 32) + " ...";
       }
-      statusView.setText(getString(resultHandler.getDisplayTitle()) + " : " + rawResultString);
+      /*statusView.setText(getString(resultHandler.getDisplayTitle()) + " : " + rawResultString);*/
     }
 
     if (copyToClipboard && !resultHandler.areContentsSecure()) {
@@ -807,10 +835,10 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     if (handler != null) {
       handler.sendEmptyMessageDelayed(R.id.restart_preview, delayMS);
     }
-    resetStatusView();
+    /*resetStatusView();*/
   }
 
-  private void resetStatusView() {
+  /*private void resetStatusView() {
     resultView.setVisibility(View.GONE);
 
     // in case of continuous scan mode we don't want the message to be reset to the default if previously overridden
@@ -859,7 +887,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         }
       }
     }
-  }
+  }*/
 
   public void drawViewfinder() {
     viewfinderView.drawViewfinder();

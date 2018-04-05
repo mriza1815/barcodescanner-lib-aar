@@ -21,11 +21,6 @@
                android:layout_width="fill_parent"
                android:layout_height="fill_parent"/>
 
-  <com.google.zxing.client.android.ViewfinderView
-      android:id="@+id/viewfinder_view"
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent"/>
-
   <LinearLayout android:id="@+id/result_view"
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
@@ -171,50 +166,98 @@
 
     </LinearLayout>
 
-    <LinearLayout android:id="@+id/result_button_view"
-                  android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal"
-                  android:gravity="center">
+    <LinearLayout
+        android:id="@+id/result_button_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-      <Button style="@style/ResultButton"
-              android:visibility="gone"/>
+      <Button
+          style="@style/ResultButton"
+          android:visibility="gone" />
 
-      <Button style="@style/ResultButton"
-              android:visibility="gone"/>
+      <Button
+          style="@style/ResultButton"
+          android:visibility="gone" />
 
-      <Button style="@style/ResultButton"
-              android:visibility="gone"/>
+      <Button
+          style="@style/ResultButton"
+          android:visibility="gone" />
 
-      <Button style="@style/ResultButton"
-              android:visibility="gone"/>
+      <Button
+          style="@style/ResultButton"
+          android:visibility="gone" />
 
     </LinearLayout>
 
   </LinearLayout>
 
-  <TextView android:id="@+id/status_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/transparent"
-            android:text="@string/msg_default_status"
-            android:textColor="@color/status_text"/>
+  <LinearLayout
+      android:background="#000"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_gravity="bottom|center_horizontal"
+      android:paddingHorizontal="20px"
+      android:paddingVertical="60px"
+      android:gravity="center"
+      android:orientation="horizontal" >
 
-  <Button android:id="@+id/flip_button"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="top|start"
-          android:drawableLeft="@drawable/flip_camera"
-          android:drawableStart="@drawable/flip_camera"
-          android:visibility="invisible"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginRight="10dp"
+        android:textSize="27px"
+        android:background="@color/transparent"
+        android:text="@string/tab_barcode_text"
+        android:textColor="@color/active_tab_color" />
 
-  <Button android:id="@+id/torch_button"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="top|right"
-          android:drawableLeft="@drawable/toggle_torch"
-          android:drawableStart="@drawable/toggle_torch"
-          android:visibility="invisible"/>
+    <Button
+        android:id="@+id/formula_tab"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="10dp"
+        android:textSize="27px"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@color/transparent"
+        android:text="@string/tab_formula_text"
+        android:textColor="@color/encode_view"/>
+
+    <Button
+        android:id="@+id/text_tab"
+        android:layout_width="wrap_content"
+        android:textSize="27px"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@color/transparent"
+        android:text="@string/tab_text_text"
+        android:textColor="@color/encode_view"/>
+
+  </LinearLayout>
+
+  <Button
+      android:id="@+id/flip_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="top|start"
+      android:drawableLeft="@drawable/flip_camera"
+      android:drawableStart="@drawable/flip_camera"
+      android:visibility="invisible" />
+
+  <Button
+      android:id="@+id/torch_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="top|right"
+      android:drawableLeft="@drawable/toggle_torch"
+      android:drawableStart="@drawable/toggle_torch"
+      android:visibility="invisible" />
+
+  <com.google.zxing.client.android.ViewfinderView
+      android:id="@+id/viewfinder_view"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent" />
 
 </merge>
