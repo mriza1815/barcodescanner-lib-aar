@@ -66,7 +66,7 @@
   <string name="msg_default_meta">Metadata</string>
   <string name="msg_default_mms_subject">Hi</string>
   <string name="msg_default_status">Place a barcode inside the viewfinder rectangle to scan it.</string>
-  <string name="tab_barcode_text">Read Barcode</string>
+  <string name="tab_barcode_text">Scan Barcode</string>
   <string name="tab_formula_text">Convert Formula</string>
   <string name="tab_text_text">Convert Text</string>
   <string name="msg_default_time">Time</string>

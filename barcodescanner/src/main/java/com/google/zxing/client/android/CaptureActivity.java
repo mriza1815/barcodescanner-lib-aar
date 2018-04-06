@@ -112,6 +112,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   private Button torchButton;
   private Button captureFormula;
   private Button captureText;
+  private Button backButton;
   private View resultView;
   private Result lastResult;
   private boolean hasSurface;
@@ -195,6 +196,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
    /* statusView = (TextView) findViewById(R.id.status_view);*/
     captureFormula = (Button) findViewById(R.id.formula_tab);
     captureText = (Button) findViewById(R.id.text_tab);
+    backButton = (Button) findViewById(R.id.back_button);
     flipButton = (Button) findViewById(R.id.flip_button);
     torchButton = (Button) findViewById(R.id.torch_button);
 
@@ -209,7 +211,15 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     captureText.setOnClickListener(new Button.OnClickListener() {
       @Override
       public void onClick(View v) {
-        setResult(2);
+        setResult(3);
+        finish();
+      }
+    });
+
+    backButton.setOnClickListener(new Button.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        setResult(4);
         finish();
       }
     });
@@ -631,8 +641,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       barcodeImageView.setImageBitmap(barcode);
     }
 
-    TextView formatTextView = (TextView) findViewById(R.id.format_text_view);
-    formatTextView.setText(rawResult.getBarcodeFormat().toString());
+    /*TextView formatTextView = (TextView) findViewById(R.id.format_text_view);
+    formatTextView.setText(rawResult.getBarcodeFormat().toString());*/
 
     TextView typeTextView = (TextView) findViewById(R.id.type_text_view);
     typeTextView.setText(resultHandler.getType().toString());
@@ -679,9 +689,9 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     }
 
     int buttonCount = resultHandler.getButtonCount();
-    ViewGroup buttonView = (ViewGroup) findViewById(R.id.result_button_view);
-    buttonView.requestFocus();
-    for (int x = 0; x < ResultHandler.MAX_BUTTON_COUNT; x++) {
+    /*ViewGroup buttonView = (ViewGroup) findViewById(R.id.result_button_view);
+    buttonView.requestFocus();*/
+    /*for (int x = 0; x < ResultHandler.MAX_BUTTON_COUNT; x++) {
       TextView button = (TextView) buttonView.getChildAt(x);
       if (x < buttonCount) {
         button.setVisibility(View.VISIBLE);
@@ -690,7 +700,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       } else {
         button.setVisibility(View.GONE);
       }
-    }
+    }*/
 
   }
 

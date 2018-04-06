@@ -60,25 +60,6 @@
 
           <TextView android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/msg_default_format"
-                    android:textColor="@color/result_minor_text"
-                    android:textStyle="bold"
-                    android:paddingRight="@dimen/half_padding"/>
-
-          <TextView android:id="@+id/format_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/result_minor_text"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-          android:orientation="horizontal"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-
-          <TextView android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="@string/msg_default_type"
                     android:textColor="@color/result_minor_text"
                     android:textStyle="bold"
@@ -166,7 +147,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <!--<LinearLayout
         android:id="@+id/result_button_view"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -189,51 +170,85 @@
           style="@style/ResultButton"
           android:visibility="gone" />
 
-    </LinearLayout>
+    </LinearLayout>-->
 
   </LinearLayout>
 
   <LinearLayout
-      android:background="#000"
+      android:background="#41556d"
+      android:layout_width="fill_parent"
+      android:layout_height="180px"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="100px"
+      android:layout_gravity="center_horizontal"
+      android:paddingTop="25px"
+      android:paddingBottom="25px"
+      android:gravity="center"
+      android:orientation="horizontal" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@color/transparent"
+        android:text="@string/tab_barcode_text"
+        android:textColor="@color/encode_view"
+        android:paddingTop="25px"
+        android:paddingBottom="25px"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+
+  <LinearLayout
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
       android:layout_alignParentBottom="true"
-      android:layout_gravity="bottom|center_horizontal"
-      android:paddingHorizontal="20px"
-      android:paddingVertical="60px"
+      android:layout_gravity="bottom"
+      android:background="#000"
       android:gravity="center"
-      android:orientation="horizontal" >
+      android:orientation="horizontal"
+      android:paddingHorizontal="10sp"
+      android:paddingTop="50px"
+      android:paddingBottom="70px">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginRight="10dp"
-        android:textSize="27px"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="7dp"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="15px"
+        android:paddingBottom="75px"
         android:background="@color/transparent"
         android:text="@string/tab_barcode_text"
-        android:textColor="@color/active_tab_color" />
+        android:textColor="@color/active_tab_color"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/formula_tab"
         android:layout_width="wrap_content"
-        android:layout_marginRight="10dp"
-        android:textSize="27px"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="7dp"
+        android:paddingTop="15px"
+        android:paddingBottom="75px"
         android:background="@color/transparent"
         android:text="@string/tab_formula_text"
-        android:textColor="@color/encode_view"/>
+        android:textColor="@color/encode_view"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/text_tab"
-        android:layout_width="wrap_content"
-        android:textSize="27px"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
+        android:paddingTop="15px"
+        android:paddingBottom="75px"
+        android:layout_gravity="center_vertical"
         android:background="@color/transparent"
         android:text="@string/tab_text_text"
-        android:textColor="@color/encode_view"/>
+        android:textColor="@color/encode_view"
+        android:textSize="16sp" />
 
   </LinearLayout>
 
@@ -254,6 +269,40 @@
       android:drawableLeft="@drawable/toggle_torch"
       android:drawableStart="@drawable/toggle_torch"
       android:visibility="invisible" />
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="200px"
+      android:paddingTop="50px"
+      android:paddingBottom="50px"
+      android:layout_alignParentBottom="true"
+      android:orientation="vertical">
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="31dp"
+        android:id="@+id/back_button"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/ic_menu_back"
+        android:gravity="center"
+        android:textColor="@color/encode_view" />
+
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/half_padding"
+        android:text="@string/msg_default_format"
+        android:textColor="@color/result_minor_text"
+        android:visibility="invisible"
+        android:textStyle="bold" />-->
+
+    <!--<TextView
+        android:id="@+id/format_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/result_minor_text" />-->
+
+  </LinearLayout>
 
   <com.google.zxing.client.android.ViewfinderView
       android:id="@+id/viewfinder_view"
