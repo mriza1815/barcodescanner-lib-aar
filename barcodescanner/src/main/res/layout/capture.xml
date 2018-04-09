@@ -177,24 +177,19 @@
   <LinearLayout
       android:background="#41556d"
       android:layout_width="fill_parent"
-      android:layout_height="180px"
+      android:layout_height="200px"
       android:layout_alignParentBottom="true"
-      android:layout_marginBottom="100px"
       android:layout_gravity="center_horizontal"
-      android:paddingTop="25px"
-      android:paddingBottom="25px"
       android:gravity="center"
       android:orientation="horizontal" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
+        android:layout_gravity="center_vertical|center_horizontal"
         android:background="@color/transparent"
         android:text="@string/tab_barcode_text"
         android:textColor="@color/encode_view"
-        android:paddingTop="25px"
-        android:paddingBottom="25px"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -202,24 +197,20 @@
 
   <LinearLayout
       android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="500px"
       android:layout_alignParentBottom="true"
       android:layout_gravity="bottom"
       android:background="#000"
       android:gravity="center"
       android:orientation="horizontal"
-      android:paddingHorizontal="10sp"
-      android:paddingTop="50px"
-      android:paddingBottom="70px">
+      android:paddingTop="10sp">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginRight="7dp"
-        android:layout_marginLeft="10dp"
-        android:paddingTop="15px"
-        android:paddingBottom="75px"
+        android:layout_gravity="start"
+        android:layout_marginRight="20px"
+        android:layout_marginLeft="30px"
         android:background="@color/transparent"
         android:text="@string/tab_barcode_text"
         android:textColor="@color/active_tab_color"
@@ -229,10 +220,8 @@
         android:id="@+id/formula_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginRight="7dp"
-        android:paddingTop="15px"
-        android:paddingBottom="75px"
+        android:layout_gravity="start"
+        android:layout_marginRight="20px"
         android:background="@color/transparent"
         android:text="@string/tab_formula_text"
         android:textColor="@color/encode_view"
@@ -240,11 +229,9 @@
 
     <Button
         android:id="@+id/text_tab"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="15px"
-        android:paddingBottom="75px"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="start"
         android:background="@color/transparent"
         android:text="@string/tab_text_text"
         android:textColor="@color/encode_view"
@@ -279,8 +266,8 @@
       android:orientation="vertical">
 
     <Button
-        android:layout_width="50dp"
-        android:layout_height="31dp"
+        android:layout_width="50sp"
+        android:layout_height="30sp"
         android:id="@+id/back_button"
         android:layout_gravity="center_vertical"
         android:background="@drawable/ic_menu_back"
