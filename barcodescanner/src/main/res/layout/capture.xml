@@ -177,7 +177,7 @@
   <LinearLayout
       android:background="#41556d"
       android:layout_width="fill_parent"
-      android:layout_height="200px"
+      android:layout_height="180px"
       android:layout_alignParentBottom="true"
       android:layout_gravity="center_horizontal"
       android:gravity="center"
@@ -190,14 +190,14 @@
         android:background="@color/transparent"
         android:text="@string/tab_barcode_text"
         android:textColor="@color/encode_view"
-        android:textSize="20sp"
+        android:textSize="20px"
         android:textStyle="bold" />
 
   </LinearLayout>
 
   <LinearLayout
       android:layout_width="fill_parent"
-      android:layout_height="500px"
+      android:layout_height="300px"
       android:layout_alignParentBottom="true"
       android:layout_gravity="bottom"
       android:background="#000"
